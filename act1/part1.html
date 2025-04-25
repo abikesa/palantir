@@ -184,12 +184,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Resonance 🚢</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="chapter1.html">Idols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter2.html">Realities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter3.html">Question</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Resonance 🚢</a></li>
+
 <li class="toctree-l1 has-children"><a class="reference internal" href="../act2/part2.html">Dissonance 🪛 🏴‍☠️</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../act2/chapter1.html">Eternal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../act2/chapter2.html">War</a></li>
@@ -375,7 +371,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -391,6 +389,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Resonance 🚢</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sound">Sound 🌊</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -402,19 +410,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="resonance">
 <h1>Resonance 🚢<a class="headerlink" href="#resonance" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sound">
+<h1>Sound 🌊<a class="headerlink" href="#sound" title="Permalink to this heading">#</a></h1>
 <style>
-/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) — Dark Mode */
+/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
 .float-frame {
-    border: 1px solid #444;
-    background-color: #1e1e1e;
-    color: #ccc;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
     position: relative;
     padding: 10px 14px;
     margin: 15px;
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
-    line-height: 1.6;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    line-height: 1.5;
 }
 
 /* Floated figure (image/code block) */
@@ -432,10 +441,7 @@ document.write(`
     min-width: 200px;
     text-align: left;
     white-space: normal;
-    background-color: #2a2a2a;
-    color: #ddd;
-    border: 1px solid #555;
-    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Responsive override */
@@ -449,82 +455,171 @@ document.write(`
     }
 }
 
-/* ╭━━━☆━━━╮  BLOCKQUOTES — Dark & Glowing */
+/* ╭━━━☆━━━╮  BLOCKQUOTES */
 blockquote {
-    border-left: 3px solid #888;
+    border-left: 2px solid #999;
     padding-left: 1em;
     margin-left: 0;
     margin-right: 0;
-    color: #bbb;
+    color: #444;
     font-style: italic;
-    background-color: #111;
-    box-shadow: inset 3px 0 5px rgba(255, 255, 255, 0.05);
+    background: none;
 }
 
 blockquote a {
-    color: #ffcc00;
-    border-bottom: 1px dotted #888;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    font-style: normal;
+    color: #333;
+    border-bottom: 1px dotted #aaa;
 }
 
 blockquote a:hover {
-    color: #fff;
-    border-bottom: 1px solid #ffcc00;
+    color: #000;
+    border-bottom: 1px solid #555;
 }
 
-/* ╭━━━☆━━━╮  IMAGE STYLING — DARK INTEGRATION */
+/* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
+.custom-details summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: normal;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px dotted black;
+    border-radius: 20px;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-details summary:hover {
+    color: lightgray;
+}
+
+.custom-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ╭━━━☆━━━╮  NESTED QUOTES INSIDE DETAILS */
+.quote-content {
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    color: #555;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.quote-content details {
+    margin-top: 10px;
+}
+
+.quote-content summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* so-so- def Container that floats right with image and caption */
 .float-right {
     float: right;
     width: 35%;
     height: auto;
     margin-left: 15px;
-    border: 1px solid #444;
+    border: 1px solid #ccc;
     padding: 5px;
-    background-color: #1a1a1a;
-    color: #ccc;
     text-align: center;
     font-size: 12px;
+    background-color: #f9f9f9;
     position: relative;
-    box-shadow: 0 0 8px rgba(255,255,255,0.04);
 }
 
+/* Image itself */
 .float-right img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    filter: brightness(90%) contrast(110%);
 }
 
-/* Overlay icon dark mode polish */
+/* Magnify icon overlay */
+.image-bubble.layered-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 12px;
+    height: 10px;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Larger screen rectangle */
 .large-icon {
-    background-color: #555;
-    border: 1px solid #aaa;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border: 1px solid #888;
+    border-radius: 2px;
 }
 
+/* Smaller screen at 7 o'clock */
 .small-icon {
-    background-color: #999;
-    border: 1px solid #ccc;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #aaa;
+    border: 1px solid #666;
+    border-radius: 2px;
+    bottom: -1px;
+    left: -1px;
 }
 
 .image-bubble.layered-icon:hover .large-icon {
-    background-color: #ffcc00;
-    border-color: #ffcc00;
+    background-color: #007BFF;
+    border-color: #0056b3;
 }
 
 .image-bubble.layered-icon:hover .small-icon {
-    background-color: #000;
-    border-color: #ffcc00;
+    background-color: white;
+    border-color: #007BFF;
 }
 
+/* Scoped variant for seealso boxes */
+.float-frame.seealso-style {
+    float: right; 
+    display: inline-block;
+    width: 190px;
+    max-width: 190px;
+    min-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+    white-space: nowrap;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .float-frame.seealso-style {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+        white-space: normal;
+    }
+}
 </style>
 <details class="custom-details">
   <summary>+ Expand</summary>
   <iframe src="https://www.palantir.com/" width="100%" height="1000px" style="border:none"></iframe>
   <blockquote class="quote-content">
     <details>
-      <summary>Perceptive AI</summary>
-      <p>Trunk</p>
+      <summary>Analysis</summary>
+      <p>In designing the scenery and costumes...</p>
     </details>
     <p>-- <a href="https://www.gutenberg.org/cache/epub/887/pg887-images.html#page221">The Truth of Masks 🎭</a></p>
   </blockquote>
@@ -603,6 +698,23 @@ blockquote a:hover {
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Resonance 🚢</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sound">Sound 🌊</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
