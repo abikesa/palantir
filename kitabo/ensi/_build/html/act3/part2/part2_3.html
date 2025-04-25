@@ -600,6 +600,35 @@ blockquote a:hover {
         white-space: normal;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+  .float-frame,
+  .float-right,
+  .float-frame.figure-style,
+  .float-frame.left-style,
+  .float-frame.seealso-style {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #ddd;
+  }
+
+  .float-frame a,
+  .float-frame p,
+  .float-frame span {
+    color: #ccc;
+  }
+
+  blockquote {
+    color: #bbb;
+    border-left: 2px solid #555;
+  }
+
+  .quote-content {
+    border-left: 4px solid #444;
+    color: #aaa;
+  }
+}
+
 </style>
 <details class="custom-details">
   <summary>+ Expand</summary>
