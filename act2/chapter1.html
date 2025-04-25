@@ -192,6 +192,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="part2.html">Dissonance 🪛 🏴‍☠️</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Eternal</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="chapter2.html">War</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter3.html">Hammer</a></li>
 </ul>
@@ -362,7 +363,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -378,6 +381,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eternal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -389,6 +402,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eternal">
 <h1>Eternal<a class="headerlink" href="#eternal" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <style>
 /* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
 .float-frame {
@@ -402,32 +418,42 @@ document.write(`
     line-height: 1.5;
 }
 
-/* Floated figure (image/code block) */
 .float-frame.figure-style {
     float: right;
     width: 35%;
     text-align: center;
 }
 
-/* Floated seealso (text-only callout) */
-.float-frame.seealso-style {
-    float: right;
-    width: 45%;
-    max-width: 400px;
-    min-width: 200px;
-    text-align: left;
-    white-space: normal;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.float-frame.left-style {
+    float: left;
+    width: 35%;
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 0;
 }
 
-/* Responsive override */
+.float-frame.seealso-style {
+    float: right;
+    display: inline-block;
+    width: 190px;
+    max-width: 190px;
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Responsive override for all floats */
 @media (max-width: 768px) {
-    .float-frame {
+    .float-frame,
+    .float-frame.seealso-style {
         float: none !important;
         display: block;
         width: 95vw !important;
         max-width: 95vw !important;
         margin: 10px auto;
+        white-space: normal;
     }
 }
 
@@ -435,8 +461,7 @@ document.write(`
 blockquote {
     border-left: 2px solid #999;
     padding-left: 1em;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     color: #444;
     font-style: italic;
     background: none;
@@ -448,7 +473,6 @@ blockquote a {
     color: #333;
     border-bottom: 1px dotted #aaa;
 }
-
 blockquote a:hover {
     color: #000;
     border-bottom: 1px solid #555;
@@ -456,7 +480,6 @@ blockquote a:hover {
 
 /* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
 .custom-details summary {
-    list-style: none;
     cursor: pointer;
     font-weight: normal;
     display: inline-block;
@@ -466,11 +489,9 @@ blockquote a:hover {
     text-align: center;
     transition: color 0.3s ease-in-out;
 }
-
 .custom-details summary:hover {
     color: lightgray;
 }
-
 .custom-details summary::-webkit-details-marker {
     display: none;
 }
@@ -483,21 +504,18 @@ blockquote a:hover {
     font-style: italic;
     margin-top: 15px;
 }
-
 .quote-content details {
     margin-top: 10px;
 }
-
 .quote-content summary {
     font-weight: bold;
     cursor: pointer;
 }
 
-/* so-so- def Container that floats right with image and caption */
+/* ╭━━━☆━━━╮  FLOATING IMAGES */
 .float-right {
     float: right;
     width: 35%;
-    height: auto;
     margin-left: 15px;
     border: 1px solid #ccc;
     padding: 5px;
@@ -506,15 +524,13 @@ blockquote a:hover {
     background-color: #f9f9f9;
     position: relative;
 }
-
-/* Image itself */
 .float-right img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Magnify icon overlay */
+/* ╭━━━☆━━━╮  MAGNIFY ICON OVERLAY */
 .image-bubble.layered-icon {
     position: absolute;
     bottom: 8px;
@@ -526,68 +542,42 @@ blockquote a:hover {
     cursor: pointer;
     z-index: 5;
 }
-
-/* Larger screen rectangle */
-.large-icon {
+.large-icon, .small-icon {
     position: absolute;
+    border-radius: 2px;
+}
+.large-icon {
     width: 100%;
     height: 100%;
     background-color: #ddd;
     border: 1px solid #888;
-    border-radius: 2px;
 }
-
-/* Smaller screen at 7 o'clock */
 .small-icon {
-    position: absolute;
     width: 50%;
     height: 50%;
     background-color: #aaa;
     border: 1px solid #666;
-    border-radius: 2px;
     bottom: -1px;
     left: -1px;
 }
-
 .image-bubble.layered-icon:hover .large-icon {
     background-color: #007BFF;
     border-color: #0056b3;
 }
-
 .image-bubble.layered-icon:hover .small-icon {
     background-color: white;
     border-color: #007BFF;
 }
 
-/* Scoped variant for seealso boxes */
-.float-frame.seealso-style {
-    float: right; 
-    display: inline-block;
-    width: 190px;
-    max-width: 190px;
-    min-width: 100px;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-    font-size: 13px;
-    background-color: #f9f9f9;
-    position: relative;
-    text-align: center;
-    margin: 15px;
-    white-space: nowrap;
+.float-frame pre,
+.float-frame div.highlight,
+.float-frame code {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block;
 }
 
-/* Responsive fallback */
-@media (max-width: 768px) {
-    .float-frame.seealso-style {
-        float: none !important;
-        display: block;
-        width: 95vw !important;
-        max-width: 95vw !important;
-        margin: 10px auto;
-        white-space: normal;
-    }
-}
 </style>
 <details class="custom-details">
   <summary>+ Expand</summary>
@@ -597,7 +587,7 @@ blockquote a:hover {
       <summary>World AI</summary>
       <p>Reality or Simulation</p>
     </details>
-    <p>-- <a href="https://www.gutenberg.org/files/174/174-h/174-h.htm">Imitative 🎭</a></p>
+    <p>-- <a href="https://www.gutenberg.org/cache/epub/887/pg887-images.html#page221">The Truth of Masks 🎭</a></p>
   </blockquote>
 </details>
 <script>
@@ -635,7 +625,7 @@ blockquote a:hover {
 </figure>
 </div>
 <p>His catchphrase, etched into the faces of exasperated friends and lovers, was always the same: <em>“Not compelling.”</em> A book recommended? <em>Not compelling.</em></p>
-<p>A wedding toast? <em>Not compelling.</em> A sunset over the Pyrenees? <em>Meh. Too much chiaroscuro. Not compelling.</em> His name doesn’t matter. He never let anyone say it with drama. This is the story of a man who spent his entire life underwhelmed—and why it mattered. <span id="id1"><sup><a class="reference internal" href="../bibliography.html#id58" title="Dante Alighieri. The Divine Comedy: Volume 2: Purgatorio. Penguin Classics, 1984. URL: https://www.gutenberg.org/cache/epub/998/pg998-images.html.">2</a></sup></span></p>
+<p>A wedding toast? <em>Not compelling.</em> A sunset over the Pyrenees? <em>Meh. Too much chiaroscuro. Not compelling.</em> His name doesn’t matter. He never let anyone say it with drama. This is the story of a man who spent his entire life underwhelmed—and why it mattered. <span id="id2"><sup><a class="reference internal" href="../bibliography.html#id58" title="Dante Alighieri. The Divine Comedy: Volume 2: Purgatorio. Penguin Classics, 1984. URL: https://www.gutenberg.org/cache/epub/998/pg998-images.html.">2</a></sup></span></p>
 <p><strong>II. Aesthetic Nihilism as Armor</strong></p>
 <p>To say <em>not compelling</em> is to wield the scalpel of critique without ever lifting the pen of creation. It’s easy to imagine this man as a genius unfulfilled, a critic savant whose standards were simply too high. But that’s a flattering lie. His resistance to compulsion was not rooted in rigor, but in fear. The fear that to be moved was to be vulnerable. To be compelled was to yield, to admit that something outside himself could enter uninvited and rearrange the furniture of his interior life.</p>
 <div class="float-frame left-style">
@@ -833,6 +823,23 @@ A child’s drawing: <em>Derivative.</em></p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Eternal</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
