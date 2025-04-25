@@ -532,11 +532,11 @@ blockquote a:hover {
 </details>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const details = document.querySelector(".custom-details");
-    const summary = details.querySelector("summary");
-
-    details.addEventListener("toggle", function() {
-      summary.textContent = details.open ? "- Collapse" : "+ Expand";
+    document.querySelectorAll(".custom-details").forEach(details => {
+      const summary = details.querySelector("summary");
+      details.addEventListener("toggle", function() {
+        summary.textContent = details.open ? "- Collapse" : "+ Expand";
+      });
     });
   });
 </script>
