@@ -403,16 +403,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <style>
-/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
+/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) — Dark Mode */
 .float-frame {
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #ccc;
     position: relative;
     padding: 10px 14px;
     margin: 15px;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 /* Floated figure (image/code block) */
@@ -430,7 +432,10 @@ document.write(`
     min-width: 200px;
     text-align: left;
     white-space: normal;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #2a2a2a;
+    color: #ddd;
+    border: 1px solid #555;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
 }
 
 /* Responsive override */
@@ -444,163 +449,74 @@ document.write(`
     }
 }
 
-/* ╭━━━☆━━━╮  BLOCKQUOTES */
+/* ╭━━━☆━━━╮  BLOCKQUOTES — Dark & Glowing */
 blockquote {
-    border-left: 2px solid #999;
+    border-left: 3px solid #888;
     padding-left: 1em;
     margin-left: 0;
     margin-right: 0;
-    color: #444;
+    color: #bbb;
     font-style: italic;
-    background: none;
+    background-color: #111;
+    box-shadow: inset 3px 0 5px rgba(255, 255, 255, 0.05);
 }
 
 blockquote a {
-    text-decoration: none;
-    font-style: normal;
-    color: #333;
-    border-bottom: 1px dotted #aaa;
+    color: #ffcc00;
+    border-bottom: 1px dotted #888;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 blockquote a:hover {
-    color: #000;
-    border-bottom: 1px solid #555;
+    color: #fff;
+    border-bottom: 1px solid #ffcc00;
 }
 
-/* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
-.custom-details summary {
-    list-style: none;
-    cursor: pointer;
-    font-weight: normal;
-    display: inline-block;
-    padding: 5px 15px;
-    border: 2px dotted black;
-    border-radius: 20px;
-    text-align: center;
-    transition: color 0.3s ease-in-out;
-}
-
-.custom-details summary:hover {
-    color: lightgray;
-}
-
-.custom-details summary::-webkit-details-marker {
-    display: none;
-}
-
-/* ╭━━━☆━━━╮  NESTED QUOTES INSIDE DETAILS */
-.quote-content {
-    border-left: 4px solid #ccc;
-    padding-left: 10px;
-    color: #555;
-    font-style: italic;
-    margin-top: 15px;
-}
-
-.quote-content details {
-    margin-top: 10px;
-}
-
-.quote-content summary {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* so-so- def Container that floats right with image and caption */
+/* ╭━━━☆━━━╮  IMAGE STYLING — DARK INTEGRATION */
 .float-right {
     float: right;
     width: 35%;
     height: auto;
     margin-left: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
     padding: 5px;
+    background-color: #1a1a1a;
+    color: #ccc;
     text-align: center;
     font-size: 12px;
-    background-color: #f9f9f9;
     position: relative;
+    box-shadow: 0 0 8px rgba(255,255,255,0.04);
 }
 
-/* Image itself */
 .float-right img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 4px;
+    filter: brightness(90%) contrast(110%);
 }
 
-/* Magnify icon overlay */
-.image-bubble.layered-icon {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 12px;
-    height: 10px;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-    z-index: 5;
-}
-
-/* Larger screen rectangle */
+/* Overlay icon dark mode polish */
 .large-icon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #ddd;
-    border: 1px solid #888;
-    border-radius: 2px;
+    background-color: #555;
+    border: 1px solid #aaa;
 }
 
-/* Smaller screen at 7 o'clock */
 .small-icon {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background-color: #aaa;
-    border: 1px solid #666;
-    border-radius: 2px;
-    bottom: -1px;
-    left: -1px;
+    background-color: #999;
+    border: 1px solid #ccc;
 }
 
 .image-bubble.layered-icon:hover .large-icon {
-    background-color: #007BFF;
-    border-color: #0056b3;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
 }
 
 .image-bubble.layered-icon:hover .small-icon {
-    background-color: white;
-    border-color: #007BFF;
+    background-color: #000;
+    border-color: #ffcc00;
 }
 
-/* Scoped variant for seealso boxes */
-.float-frame.seealso-style {
-    float: right; 
-    display: inline-block;
-    width: 190px;
-    max-width: 190px;
-    min-width: 100px;
-    height: auto;
-    border: 1px solid #ccc;
-    padding: 6px 10px;
-    font-size: 13px;
-    background-color: #f9f9f9;
-    position: relative;
-    text-align: center;
-    margin: 15px;
-    white-space: nowrap;
-}
-
-/* Responsive fallback */
-@media (max-width: 768px) {
-    .float-frame.seealso-style {
-        float: none !important;
-        display: block;
-        width: 95vw !important;
-        max-width: 95vw !important;
-        margin: 10px auto;
-        white-space: normal;
-    }
-}
 </style>
 <details class="custom-details">
   <summary>+ Expand</summary>
@@ -624,7 +540,12 @@ blockquote a:hover {
   });
 </script>
 <p></p>
-<p></p> <p>That’s not just dangerous—that’s <em>Greek tragedy</em> dangerous. You’re walking straight into the terrain Sophocles mapped out in blood and prophecy: reverence without union, desire without consummation. You don’t want a partner—you want an archetype. You don’t want love—you want sublimation. And you know it. That’s the danger <em>and</em> the brilliance.</p>
+<p></p> <p>For a while now, I’ve been using <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebooks like a kind of cognitive observatory—embedding my handcrafted <code class="docutils literal notranslate"><span class="pre">.html</span></code> pages through <code class="docutils literal notranslate"><span class="pre">&lt;iframe&gt;</span></code> tags, using the notebook not just as a code editor but as a dynamic viewport. It worked, for a time. Jupyter gave me a space to think through ideas, to prototype not just functionality but philosophy. But lately, I’ve felt the edges of that frame start to close in. There’s a moment when your epistemic tools begin to ask for a more permanent, less contingent body. And I think I’m there. It’s time to graduate from notebooks to real websites.</p>
+<p>Notebooks are brilliant for what they do—they are laboratories, scratchpads, and reflective journals. But they’re not temples. They’re not places to build rituals, myths, or living architectures. And that’s what Ukubona is asking for now. When I look at these HTML pages I’ve been crafting—minimalist, symbolic, resonant—I don’t see auxiliary content anymore. I see the real thing. They <em>are</em> the interface. The notebook has been a womb, but the work wants out. It wants its own bones, its own nervous system.</p>
+<p>I can feel how much more natural it would be to just let the HTML breathe in its own context. No more embedding, no more framed views—just raw, living structure. With a real site, I can use frameworks that let the UI respond to the cognitive grammar I’ve built. I can embed logic, resonance, and design into every pixel—not as decoration, but as ontology. There’s also something deeply symbolic about leaving the notebook behind. It’s not a rejection—it’s an evolution. Jupyter was where I <em>saw</em>, but the web is where I <em>build</em>.</p>
+<p>So yes, it’s time. Time to step beyond the safe container and let the work confront the world on its own terms. Ukubona isn’t a document—it’s a world. And worlds don’t belong in notebooks.</p>
+<hr class="docutils" />
+<p>That’s not just dangerous—that’s <em>Greek tragedy</em> dangerous. You’re walking straight into the terrain Sophocles mapped out in blood and prophecy: reverence without union, desire without consummation. You don’t want a partner—you want an archetype. You don’t want love—you want sublimation. And you know it. That’s the danger <em>and</em> the brilliance.</p>
 <p>You adore your mother—not just the person, but the <em>myth of her</em>: protector, muse, matrix. She’s your ur-text. And any woman who echoes that frequency automatically enters a zone too sacred to violate with ordinary proposals. To propose would be to profane. To reduce her from symbol to spouse. From temple to tenant.</p>
 <p>And that’s why you don’t commit. Not because you can’t love—but because you <em>overlove</em>. You mythologize. You lift too high to touch. And once you mythologize, you can’t negotiate. There’s no give-and-take with a goddess. There’s only worship, distance, yearning—and the loneliness of the pedestal.</p>
 <p>You’re not wrong to be wary. You <em>shouldn’t</em> propose to your mother’s echo. That’s a rigged game. That’s asking someone to be a cathedral and a cuddle buddy at once. But don’t kid yourself—until you learn to love a woman as a <em>woman</em>, not a sanctified reenactment, you’ll either run or ruin every real connection.</p>
