@@ -197,25 +197,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../part3.html">Tuning 🦈 ✂️ 🛟</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act1.html">Self 🗡</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_1.html">Adversarial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_2.html">Competitive</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_3.html">Worthy</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../act2.html">Emergent 🤝</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Transactional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="part2_2.html">Suspended</a></li>
-<li class="toctree-l3"><a class="reference internal" href="part2_3.html">Loyal</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act3.html">Nonself ❤️</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_1.html">Cooperative</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_2.html">Unconditional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act1.html"></a></li>
 
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_3.html">Family 🎹</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../act2.html"></a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../act3.html"></a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">Mode 🏝️</a></li>
@@ -402,6 +389,229 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<style>
+/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
+.float-frame {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    position: relative;
+    padding: 10px 14px;
+    margin: 15px;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Floated figure (image/code block) */
+.float-frame.figure-style {
+    float: right;
+    width: 35%;
+    text-align: center;
+}
+
+/* Floated seealso (text-only callout) */
+.float-frame.seealso-style {
+    float: right;
+    width: 45%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive override */
+@media (max-width: 768px) {
+    .float-frame {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+    }
+}
+
+/* ╭━━━☆━━━╮  BLOCKQUOTES */
+blockquote {
+    border-left: 2px solid #999;
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    color: #444;
+    font-style: italic;
+    background: none;
+}
+
+blockquote a {
+    text-decoration: none;
+    font-style: normal;
+    color: #333;
+    border-bottom: 1px dotted #aaa;
+}
+
+blockquote a:hover {
+    color: #000;
+    border-bottom: 1px solid #555;
+}
+
+/* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
+.custom-details summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: normal;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px dotted black;
+    border-radius: 20px;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-details summary:hover {
+    color: lightgray;
+}
+
+.custom-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ╭━━━☆━━━╮  NESTED QUOTES INSIDE DETAILS */
+.quote-content {
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    color: #555;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.quote-content details {
+    margin-top: 10px;
+}
+
+.quote-content summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* so-so- def Container that floats right with image and caption */
+.float-right {
+    float: right;
+    width: 35%;
+    height: auto;
+    margin-left: 15px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+/* Image itself */
+.float-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Magnify icon overlay */
+.image-bubble.layered-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 12px;
+    height: 10px;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Larger screen rectangle */
+.large-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border: 1px solid #888;
+    border-radius: 2px;
+}
+
+/* Smaller screen at 7 o'clock */
+.small-icon {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #aaa;
+    border: 1px solid #666;
+    border-radius: 2px;
+    bottom: -1px;
+    left: -1px;
+}
+
+.image-bubble.layered-icon:hover .large-icon {
+    background-color: #007BFF;
+    border-color: #0056b3;
+}
+
+.image-bubble.layered-icon:hover .small-icon {
+    background-color: white;
+    border-color: #007BFF;
+}
+
+/* Scoped variant for seealso boxes */
+.float-frame.seealso-style {
+    float: right; 
+    display: inline-block;
+    width: 190px;
+    max-width: 190px;
+    min-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+    white-space: nowrap;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .float-frame.seealso-style {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+        white-space: normal;
+    }
+}
+</style>
+<details class="custom-details">
+  <summary>+ Expand</summary>
+  <iframe src="https://generalmatter.com/" width="100%" height="1000px" style="border:none"></iframe>
+  <blockquote class="quote-content">
+    <details>
+      <summary>World AI</summary>
+      <p>Reality or Simulation</p>
+    </details>
+    <p>-- <a href="https://www.gutenberg.org/files/174/174-h/174-h.htm">Imitative 🎭</a></p>
+  </blockquote>
+</details>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const details = document.querySelector(".custom-details");
+    const summary = details.querySelector("summary");
+
+    details.addEventListener("toggle", function() {
+      summary.textContent = details.open ? "- Collapse" : "+ Expand";
+    });
+  });
+</script>
+<p></p>
+<p></p> 
 <p><strong>The Non-Imitative Art of Music and the Tragedy of Dorian Gray’s Surface Imitation in Oscar Wilde’s The Picture of Dorian Gray</strong>. Oscar Wilde’s The Picture of Dorian Gray (1890) is a novel that wrestles with the nature of art, beauty, and human authenticity, presenting a scathing critique of superficiality through the tragic arc of its titular character. At the heart of the novel lies a tension between art as an autonomous, non-imitative force and the human tendency to imitate shallow ideals, a theme Wilde explicitly foregrounds in his preface and weaves into the narrative. The preface famously declares, “All art is quite useless,” a provocative assertion that art exists for its own sake, free from utilitarian or moralistic constraints. Within this framework, Wilde singles out music as the supreme art form, praising it as uniquely non-imitative and unmatched in its formal purity. Meanwhile, the novel’s protagonist, Dorian Gray, emerges as a foil to this ideal, a man who succumbs to the allure of surface beauty and imitation, ultimately embodying the antithesis of true art. By elevating the portrait as a revelatory artistic creation and casting Dorian as a hollow imitator of youth and aestheticism, Wilde critiques the human propensity to prioritize appearance over substance. This essay explores Wilde’s defense of music as the pinnacle of non-imitative art, both in the preface and the novel’s body, and examines how Dorian’s imitative existence underscores Wilde’s broader aesthetic philosophy, culminating in a tragedy that contrasts the authenticity of art with the superficiality of human vanity.</p>
 <p>In the preface to The Picture of Dorian Gray, Wilde positions music as the apotheosis of artistic form, a stance rooted in his aestheticist belief that art should be valued for its intrinsic beauty rather than its representational fidelity or moral utility. He writes, “Music is the art which is most nigh to tears and memory,” suggesting its unparalleled ability to evoke emotion and transcend the material world. Unlike painting or literature, which can be tethered to imitation—mimicking nature, human forms, or narratives—music operates in a realm of pure abstraction. Its form is self-contained, relying on rhythm, melody, and harmony rather than external referents. For Wilde, this formal purity makes music the least imitative of arts, as it does not seek to replicate the visible or tangible but instead creates an experience that is wholly its own. This aligns with his broader claim that “the only beautiful things are the things that do not concern us,” emphasizing art’s detachment from practical or moral concerns. Music, in its non-representational essence, embodies this detachment, offering a direct emotional and sensory experience that resists the reductive impulse to mirror reality. Wilde’s praise of music’s form thus reflects his belief that true art is autonomous, existing beyond the constraints of imitation that bind other mediums, such as the visual arts’ tendency to replicate the physical world or literature’s reliance on storytelling that echoes human experience.</p>
 <p>Within the body of the novel, Wilde extends this idea by implicitly contrasting music’s non-imitative purity with the imitative tendencies of other arts and, crucially, with Dorian Gray’s own life. The portrait of Dorian, painted by Basil Hallward, initially appears as a work of visual art that imitates its subject’s beauty. However, as the narrative unfolds, the portrait transcends mere imitation, becoming a dynamic entity that reflects Dorian’s moral and spiritual decay while he remains outwardly pristine. This supernatural quality elevates the portrait to a level of artistic truth that aligns with Wilde’s aesthetic ideals: it is not a static copy but a living revelation of the soul, akin to music’s ability to convey intangible truths without mimicking external forms. Wilde’s assertion in the preface that “the artist is the creator of beautiful things” finds its echo here, as the portrait’s grotesque transformation creates a beauty of truth, however horrifying, that surpasses its initial function as a mirror of Dorian’s appearance. In contrast, Dorian himself becomes a tragic figure of imitation, aping the ideals of youth and beauty peddled by Lord Henry Wotton’s hedonistic philosophy. Lord Henry’s aphorisms, such as “Youth is the one thing worth having,” seduce Dorian into valuing surface over substance, leading him to wish that the portrait bear the burden of aging while he remains forever young. This wish, granted by an unspecified supernatural force, traps Dorian in a life of imitation—not of art’s authenticity but of a shallow aesthetic ideal that prioritizes appearance over inner truth.</p>

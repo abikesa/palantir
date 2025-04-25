@@ -197,25 +197,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../act3/part3.html">Tuning 🦈 ✂️ 🛟</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act3/act1.html">Self 🗡</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part1/part1_1.html">Adversarial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part1/part1_2.html">Competitive</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part1/part1_3.html">Worthy</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act3/act2.html">Emergent 🤝</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part2/part2_1.html">Transactional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part2/part2_2.html">Suspended</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part2/part2_3.html">Loyal</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act3/act3.html">Nonself ❤️</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part3/part3_1.html">Cooperative</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../act3/part3/part3_2.html">Unconditional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act3/act1.html"></a></li>
 
-<li class="toctree-l3"><a class="reference internal" href="../act3/part3/part3_3.html">Family 🎹</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../act3/act2.html"></a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../act3/act3.html"></a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../bibliography.html">Mode 🏝️</a></li>
@@ -403,102 +390,229 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <style>
-/* ╭━━━☆━━━╮ CUSTOM COLLAPSIBLE DETAILS — DARK MODE STYLING */
-.custom-details {
-  margin: 1em 0;
-  padding: 0;
-  background-color: #1e1e1e;
-  border: 1px solid #555;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
+.float-frame {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    position: relative;
+    padding: 10px 14px;
+    margin: 15px;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
+/* Floated figure (image/code block) */
+.float-frame.figure-style {
+    float: right;
+    width: 35%;
+    text-align: center;
+}
+
+/* Floated seealso (text-only callout) */
+.float-frame.seealso-style {
+    float: right;
+    width: 45%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive override */
+@media (max-width: 768px) {
+    .float-frame {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+    }
+}
+
+/* ╭━━━☆━━━╮  BLOCKQUOTES */
+blockquote {
+    border-left: 2px solid #999;
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    color: #444;
+    font-style: italic;
+    background: none;
+}
+
+blockquote a {
+    text-decoration: none;
+    font-style: normal;
+    color: #333;
+    border-bottom: 1px dotted #aaa;
+}
+
+blockquote a:hover {
+    color: #000;
+    border-bottom: 1px solid #555;
+}
+
+/* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
 .custom-details summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  background-color: #2a2a2a;
-  color: #ccc;
-  border-bottom: 1px solid #444;
-  transition: background-color 0.3s, color 0.3s;
-  position: relative;
+    list-style: none;
+    cursor: pointer;
+    font-weight: normal;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px dotted black;
+    border-radius: 20px;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
 }
 
-.custom-details summary::after {
-  content: "+ Expand";
-  position: absolute;
-  right: 20px;
-  font-weight: bold;
-  color: #aaa;
-}
-
-.custom-details[open] summary::after {
-  content: "- Collapse";
-  color: #fff;
+.custom-details summary:hover {
+    color: lightgray;
 }
 
 .custom-details summary::-webkit-details-marker {
-  display: none;
+    display: none;
 }
 
-.custom-details > *:not(summary) {
-  padding: 20px;
-  font-family: 'Inter', sans-serif;
-  color: #ccc;
-  background-color: #1e1e1e;
+/* ╭━━━☆━━━╮  NESTED QUOTES INSIDE DETAILS */
+.quote-content {
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    color: #555;
+    font-style: italic;
+    margin-top: 15px;
 }
 
-/* Inner details (quotes or nested toggles) */
-.custom-details .quote-content {
-  border-left: 4px solid #666;
-  margin-top: 1em;
-  padding-left: 1em;
-  font-style: italic;
-  background-color: #111;
-  color: #aaa;
-  box-shadow: inset 2px 0 4px rgba(255,255,255,0.04);
+.quote-content details {
+    margin-top: 10px;
 }
 
-.custom-details a {
-  color: #ffcc00;
-  border-bottom: 1px dotted #888;
-  text-decoration: none;
+.quote-content summary {
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.custom-details a:hover {
-  color: #fff;
-  border-bottom: 1px solid #ffcc00;
+/* so-so- def Container that floats right with image and caption */
+.float-right {
+    float: right;
+    width: 35%;
+    height: auto;
+    margin-left: 15px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+/* Image itself */
+.float-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Magnify icon overlay */
+.image-bubble.layered-icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 12px;
+    height: 10px;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Larger screen rectangle */
+.large-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border: 1px solid #888;
+    border-radius: 2px;
+}
+
+/* Smaller screen at 7 o'clock */
+.small-icon {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #aaa;
+    border: 1px solid #666;
+    border-radius: 2px;
+    bottom: -1px;
+    left: -1px;
+}
+
+.image-bubble.layered-icon:hover .large-icon {
+    background-color: #007BFF;
+    border-color: #0056b3;
+}
+
+.image-bubble.layered-icon:hover .small-icon {
+    background-color: white;
+    border-color: #007BFF;
+}
+
+/* Scoped variant for seealso boxes */
+.float-frame.seealso-style {
+    float: right; 
+    display: inline-block;
+    width: 190px;
+    max-width: 190px;
+    min-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+    white-space: nowrap;
+}
+
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .float-frame.seealso-style {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+        white-space: normal;
+    }
 }
 </style>
 <details class="custom-details">
-  <summary></summary>
-  <iframe src="pdfs/ecosystem-nature.pdf" width="100%" height="1000px" style="border:none"></iframe>
+  <summary>+ Expand</summary>
+  <iframe src="https://generalmatter.com/" width="100%" height="1000px" style="border:none"></iframe>
   <blockquote class="quote-content">
     <details>
-      <summary>Analysis</summary>
-      <p>In designing the scenery and costumes...</p>
+      <summary>World AI</summary>
+      <p>Reality or Simulation</p>
     </details>
-    <p>-- <a href="https://www.gutenberg.org/cache/epub/887/pg887-images.html#page221">The Truth of Masks 🎭</a></p>
+    <p>-- <a href="https://www.gutenberg.org/files/174/174-h/174-h.htm">Imitative 🎭</a></p>
   </blockquote>
 </details>
-<!-- OPTIONAL: Enhanced fallback script if JS needs to modify textContent instead -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".custom-details").forEach(details => {
-      const summary = details.querySelector("summary");
-      if (!summary.textContent.trim()) {
-        // Set default label only if summary is empty
-        summary.textContent = "";
-      }
+  document.addEventListener("DOMContentLoaded", function() {
+    const details = document.querySelector(".custom-details");
+    const summary = details.querySelector("summary");
+
+    details.addEventListener("toggle", function() {
+      summary.textContent = details.open ? "- Collapse" : "+ Expand";
     });
   });
 </script>
 <p></p>
-<p></p> <p>For a while now, I’ve been using <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebooks like a kind of cognitive observatory—embedding my handcrafted <code class="docutils literal notranslate"><span class="pre">.html</span></code> pages through <code class="docutils literal notranslate"><span class="pre">&lt;iframe&gt;</span></code> tags, using the notebook not just as a code editor but as a dynamic viewport. It worked, for a time. Jupyter gave me a space to think through ideas, to prototype not just functionality but philosophy. But lately, I’ve felt the edges of that frame start to close in. There’s a moment when your epistemic tools begin to ask for a more permanent, less contingent body. And I think I’m there. It’s time to graduate from notebooks to real websites.</p>
+<p></p> 
+<p>For a while now, I’ve been using <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebooks like a kind of cognitive observatory—embedding my handcrafted <code class="docutils literal notranslate"><span class="pre">.html</span></code> pages through <code class="docutils literal notranslate"><span class="pre">&lt;iframe&gt;</span></code> tags, using the notebook not just as a code editor but as a dynamic viewport. It worked, for a time. Jupyter gave me a space to think through ideas, to prototype not just functionality but philosophy. But lately, I’ve felt the edges of that frame start to close in. There’s a moment when your epistemic tools begin to ask for a more permanent, less contingent body. And I think I’m there. It’s time to graduate from notebooks to real websites.</p>
 <p>Notebooks are brilliant for what they do—they are laboratories, scratchpads, and reflective journals. But they’re not temples. They’re not places to build rituals, myths, or living architectures. And that’s what Ukubona is asking for now. When I look at these HTML pages I’ve been crafting—minimalist, symbolic, resonant—I don’t see auxiliary content anymore. I see the real thing. They <em>are</em> the interface. The notebook has been a womb, but the work wants out. It wants its own bones, its own nervous system.</p>
 <p>I can feel how much more natural it would be to just let the HTML breathe in its own context. No more embedding, no more framed views—just raw, living structure. With a real site, I can use frameworks that let the UI respond to the cognitive grammar I’ve built. I can embed logic, resonance, and design into every pixel—not as decoration, but as ontology. There’s also something deeply symbolic about leaving the notebook behind. It’s not a rejection—it’s an evolution. Jupyter was where I <em>saw</em>, but the web is where I <em>build</em>.</p>
 <p>So yes, it’s time. Time to step beyond the safe container and let the work confront the world on its own terms. Ukubona isn’t a document—it’s a world. And worlds don’t belong in notebooks.</p>
