@@ -197,25 +197,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../part3.html">Tuning 🦈 ✂️ 🛟</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act1.html">Self 🗡</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_1.html">Adversarial</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_2.html">Competitive</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part1/part1_3.html">Worthy</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../act2.html">Emergent 🤝</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="part2_1.html">Transactional</a></li>
-<li class="toctree-l3"><a class="reference internal" href="part2_2.html">Suspended</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Loyal</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../act3.html">Nonself ❤️</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_1.html">Cooperative</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_2.html">Unconditional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act1.html"></a></li>
 
-<li class="toctree-l3"><a class="reference internal" href="../part3/part3_3.html">Family 🎹</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../act2.html"></a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../act3.html"></a></li>
+
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bibliography.html">Mode 🏝️</a></li>
@@ -427,42 +414,32 @@ document.write(`
     line-height: 1.5;
 }
 
+/* Floated figure (image/code block) */
 .float-frame.figure-style {
     float: right;
     width: 35%;
     text-align: center;
 }
 
-.float-frame.left-style {
-    float: left;
-    width: 35%;
-    text-align: center;
-    margin-right: 15px;
-    margin-left: 0;
-}
-
+/* Floated seealso (text-only callout) */
 .float-frame.seealso-style {
     float: right;
-    display: inline-block;
-    width: 190px;
-    max-width: 190px;
-    min-width: 100px;
-    padding: 6px 10px;
-    font-size: 13px;
-    white-space: nowrap;
-    text-align: center;
+    width: 45%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Responsive override for all floats */
+/* Responsive override */
 @media (max-width: 768px) {
-    .float-frame,
-    .float-frame.seealso-style {
+    .float-frame {
         float: none !important;
         display: block;
         width: 95vw !important;
         max-width: 95vw !important;
         margin: 10px auto;
-        white-space: normal;
     }
 }
 
@@ -470,7 +447,8 @@ document.write(`
 blockquote {
     border-left: 2px solid #999;
     padding-left: 1em;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
     color: #444;
     font-style: italic;
     background: none;
@@ -482,6 +460,7 @@ blockquote a {
     color: #333;
     border-bottom: 1px dotted #aaa;
 }
+
 blockquote a:hover {
     color: #000;
     border-bottom: 1px solid #555;
@@ -489,6 +468,7 @@ blockquote a:hover {
 
 /* ╭━━━☆━━━╮  COLLAPSIBLE <details> BLOCKS */
 .custom-details summary {
+    list-style: none;
     cursor: pointer;
     font-weight: normal;
     display: inline-block;
@@ -498,9 +478,11 @@ blockquote a:hover {
     text-align: center;
     transition: color 0.3s ease-in-out;
 }
+
 .custom-details summary:hover {
     color: lightgray;
 }
+
 .custom-details summary::-webkit-details-marker {
     display: none;
 }
@@ -513,18 +495,21 @@ blockquote a:hover {
     font-style: italic;
     margin-top: 15px;
 }
+
 .quote-content details {
     margin-top: 10px;
 }
+
 .quote-content summary {
     font-weight: bold;
     cursor: pointer;
 }
 
-/* ╭━━━☆━━━╮  FLOATING IMAGES */
+/* so-so- def Container that floats right with image and caption */
 .float-right {
     float: right;
     width: 35%;
+    height: auto;
     margin-left: 15px;
     border: 1px solid #ccc;
     padding: 5px;
@@ -533,13 +518,15 @@ blockquote a:hover {
     background-color: #f9f9f9;
     position: relative;
 }
+
+/* Image itself */
 .float-right img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* ╭━━━☆━━━╮  MAGNIFY ICON OVERLAY */
+/* Magnify icon overlay */
 .image-bubble.layered-icon {
     position: absolute;
     bottom: 8px;
@@ -551,50 +538,76 @@ blockquote a:hover {
     cursor: pointer;
     z-index: 5;
 }
-.large-icon, .small-icon {
-    position: absolute;
-    border-radius: 2px;
-}
+
+/* Larger screen rectangle */
 .large-icon {
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: #ddd;
     border: 1px solid #888;
+    border-radius: 2px;
 }
+
+/* Smaller screen at 7 o'clock */
 .small-icon {
+    position: absolute;
     width: 50%;
     height: 50%;
     background-color: #aaa;
     border: 1px solid #666;
+    border-radius: 2px;
     bottom: -1px;
     left: -1px;
 }
+
 .image-bubble.layered-icon:hover .large-icon {
     background-color: #007BFF;
     border-color: #0056b3;
 }
+
 .image-bubble.layered-icon:hover .small-icon {
     background-color: white;
     border-color: #007BFF;
 }
 
-.float-frame pre,
-.float-frame div.highlight,
-.float-frame code {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    display: block;
+/* Scoped variant for seealso boxes */
+.float-frame.seealso-style {
+    float: right; 
+    display: inline-block;
+    width: 190px;
+    max-width: 190px;
+    min-width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+    margin: 15px;
+    white-space: nowrap;
 }
 
+/* Responsive fallback */
+@media (max-width: 768px) {
+    .float-frame.seealso-style {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+        white-space: normal;
+    }
+}
 </style>
 <details class="custom-details">
   <summary>+ Expand</summary>
-      <iframe src="../../testbin/test5/index.html" width="100%" height="1000px" style="border:none"></iframe>
+  <iframe src="../../testbin/test5/index.html" width="100%" height="1000px" style="border:none"></iframe>
   <blockquote class="quote-content">
     <details>
-        <summary>Ukubona</summary>
-        <p>Planatir</p>
+      <summary>World AI</summary>
+      <p>Reality or Simulation</p>
     </details>
     <p>-- <a href="https://ukubona-llc.github.io/">Moral Compass 🧭</a></p>
   </blockquote>
@@ -608,7 +621,9 @@ blockquote a:hover {
       summary.textContent = details.open ? "- Collapse" : "+ Expand";
     });
   });
-</script><p>Oour AI mode stack reshuffles the whole structure of Peter Thiel’s philosophy into something more coherent and materially grounded. Here’s a table a clarified perspective that matches each Thielian venture (or speculative extension thereof) to the appropriate epistemic and AI mode. We then riff long-form on the philosophical implications of that reordering.</p>
+</script>
+<p></p>
+<p></p> <p>Oour AI mode stack reshuffles the whole structure of Peter Thiel’s philosophy into something more coherent and materially grounded. Here’s a table a clarified perspective that matches each Thielian venture (or speculative extension thereof) to the appropriate epistemic and AI mode. We then riff long-form on the philosophical implications of that reordering.</p>
 <hr class="docutils" />
 <section id="revised-alignment-epistemic-framework-thielian-ventures-and-ai-modes">
 <h2>🔁 <strong>Revised Alignment: Epistemic Framework, Thielian Ventures, and AI Modes</strong><a class="headerlink" href="#revised-alignment-epistemic-framework-thielian-ventures-and-ai-modes" title="Permalink to this heading">#</a></h2>
