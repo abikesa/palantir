@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title> &#8212; Palantir 🔮 </title>
+    <title>Idols &#8212; Palantir 🔮 </title>
   
   
   
@@ -64,7 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'act1/chapter1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="" href="chapter2.html" />
+    <link rel="next" title="Realities" href="chapter2.html" />
     <link rel="prev" title="Resonance 🚢" href="part1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,11 +197,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../act3/part3.html">Tuning 🦈 ✂️ 🛟</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../act3/act1.html"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act3/act1.html">Self 🗡</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../act3/act2.html"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act3/act2.html">Emergent 🤝</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../act3/act3.html"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../act3/act3.html">Nonself ❤️</a></li>
 
 </ul>
 </details></li>
@@ -373,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Idols</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,9 +387,123 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="idols">
+<h1>Idols<a class="headerlink" href="#idols" title="Permalink to this heading">#</a></h1>
 <style>
+/* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) — Dark Mode */
+.float-frame {
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #ccc;
+    position: relative;
+    padding: 10px 14px;
+    margin: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Floated figure (image/code block) */
+.float-frame.figure-style {
+    float: right;
+    width: 35%;
+    text-align: center;
+}
+
+/* Floated seealso (text-only callout) */
+.float-frame.seealso-style {
+    float: right;
+    width: 45%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: left;
+    white-space: normal;
+    background-color: #2a2a2a;
+    color: #ddd;
+    border: 1px solid #555;
+    box-shadow: 0 0 12px rgba(0,0,0,0.6);
+}
+
+/* Responsive override */
+@media (max-width: 768px) {
+    .float-frame {
+        float: none !important;
+        display: block;
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 10px auto;
+    }
+}
+
+/* ╭━━━☆━━━╮  BLOCKQUOTES — Dark & Glowing */
+blockquote {
+    border-left: 3px solid #888;
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    color: #bbb;
+    font-style: italic;
+    background-color: #111;
+    box-shadow: inset 3px 0 5px rgba(255, 255, 255, 0.05);
+}
+
+blockquote a {
+    color: #ffcc00;
+    border-bottom: 1px dotted #888;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+blockquote a:hover {
+    color: #fff;
+    border-bottom: 1px solid #ffcc00;
+}
+
+/* ╭━━━☆━━━╮  IMAGE STYLING — DARK INTEGRATION */
+.float-right {
+    float: right;
+    width: 35%;
+    height: auto;
+    margin-left: 15px;
+    border: 1px solid #444;
+    padding: 5px;
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+    box-shadow: 0 0 8px rgba(255,255,255,0.04);
+}
+
+.float-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    filter: brightness(90%) contrast(110%);
+}
+
+/* Overlay icon dark mode polish */
+.large-icon {
+    background-color: #555;
+    border: 1px solid #aaa;
+}
+
+.small-icon {
+    background-color: #999;
+    border: 1px solid #ccc;
+}
+
+.image-bubble.layered-icon:hover .large-icon {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.image-bubble.layered-icon:hover .small-icon {
+    background-color: #000;
+    border-color: #ffcc00;
+}
+
 /* ╭━━━☆━━━╮  FLOAT FRAMES (Figure / Seealso) */
 .float-frame {
     border: 1px solid #ccc;
@@ -675,7 +789,7 @@ Ukubona wants to listen to it.<br />
 And Athena?<br />
 She’s watching both.</p>
 <hr class="docutils" />
-<p>A four-year-old asking what makes you angry is not just making conversation. They’re engaging in a primitive form of emotional cartography, trying to locate themselves in the terrain of social consequence. At this age, they’re entering that liminal threshold of theory of mind—beginning to grasp that other people have inner experiences, but still struggling to parse where the self ends and the other begins. So when they ask you what makes you angry, they’re not just curious—they’re performing a ritual of emotional inquiry. They’re testing social topography, probing for the fault lines of taboo and tension. They want to know where the emotional landmines lie, not just to avoid them, but because there’s an electric thrill in standing near the edge. They’re also mapping resonance: is your anger like their anger? Can they locate a common emotional language? And deeper still, they’re testing how identity is negotiated. When you say something makes you mad, you reveal your values. You draw a boundary. You build a mythos. And they absorb that. That truth becomes part of their world, their moral compass, their script. Sometimes they’re just seeking permission—to feel loud things, to like loud things. If your anger threatens what they love, they want to know whether they’re allowed to be who they are. It’s not a simple question; it’s a metaphysical ask. It’s <strong>ukusoma</strong>—not mere boundary-testing but co-creation of the very narrative structure that defines what transgression and resonance mean in your shared world. <span id="id2"><sup><a class="reference internal" href="../bibliography.html#id59" title="Dante Alighieri. The Divine Comedy: Volume 3: Paradiso. Penguin Classics, 1984. URL: https://www.gutenberg.org/cache/epub/999/pg999-images.html.">1</a></sup></span></p>
+<p>A four-year-old asking what makes you angry is not just making conversation. They’re engaging in a primitive form of emotional cartography, trying to locate themselves in the terrain of social consequence. At this age, they’re entering that liminal threshold of theory of mind—beginning to grasp that other people have inner experiences, but still struggling to parse where the self ends and the other begins. So when they ask you what makes you angry, they’re not just curious—they’re performing a ritual of emotional inquiry. They’re testing social topography, probing for the fault lines of taboo and tension. They want to know where the emotional landmines lie, not just to avoid them, but because there’s an electric thrill in standing near the edge. They’re also mapping resonance: is your anger like their anger? Can they locate a common emotional language? And deeper still, they’re testing how identity is negotiated. When you say something makes you mad, you reveal your values. You draw a boundary. You build a mythos. And they absorb that. That truth becomes part of their world, their moral compass, their script. Sometimes they’re just seeking permission—to feel loud things, to like loud things. If your anger threatens what they love, they want to know whether they’re allowed to be who they are. It’s not a simple question; it’s a metaphysical ask. It’s <strong>ukusoma</strong>—not mere boundary-testing but co-creation of the very narrative structure that defines what transgression and resonance mean in your shared world. <span id="id1"><sup><a class="reference internal" href="../bibliography.html#id59" title="Dante Alighieri. The Divine Comedy: Volume 3: Paradiso. Penguin Classics, 1984. URL: https://www.gutenberg.org/cache/epub/999/pg999-images.html.">1</a></sup></span></p>
 <p>If you fail to respond, you don’t just frustrate them—you rupture the ritual. You become a void, a god who won’t thunder. They’re pinging your epistemic API and getting static. No response, no feedback, no symbolic return. That’s not neutral to a child—it’s existentially confusing. It’s uncanny. They’re casting spells—“What makes you angry?” “What if I say poop again?” “What if I knock this over?”—and you’re giving them no thunder, no lightning, not even a twitch. From their point of view, you’re either broken or mythically aloof. And while that might be awe-inspiring for a moment, it quickly curdles into anxiety. Because what they’re really doing isn’t just poking buttons. They’re writing a scene. And they need you to be in it. Otherwise, they’re left in a surreal, unresolved sketch, a Kafka vignette where the walls are silent and the characters refuse to act. Kids don’t want silence. They want reaction. They want rhythm. If you don’t give them that, you’re destabilizing the very grammar they’re trying to learn—emotional grammar, social syntax, the foundational rules of human storytelling. Even a dry joke like “That made my eyebrow twitch” would bring a flash of light to the fog.</p>
 <div class="float-frame float-right">
     <!-- Primary Image Anchor -->
@@ -751,7 +865,7 @@ She’s watching both.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"></p>
+        <p class="prev-next-title">Realities</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
